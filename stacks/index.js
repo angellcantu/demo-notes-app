@@ -1,12 +1,16 @@
-import MyStack from "./MyStack";
+'use strict';
+
+import { StorageStack } from './StorageStack';
 
 export default function main(app) {
   // Set default runtime for all functions
   app.setDefaultFunctionProps({
-    runtime: "nodejs14.x"
+    runtime: 'nodejs16.x',
+    srcPath: 'backend',
+    bundle: {
+      format: 'esm'
+    }
   });
 
-  new MyStack(app, "my-stack");
-
-  // Add more stacks
+  app.stack(StorageStack);
 }

@@ -17,6 +17,7 @@
 .sst
 
 # environments
+.env
 .env*.local
 
 npm-debug.log*
